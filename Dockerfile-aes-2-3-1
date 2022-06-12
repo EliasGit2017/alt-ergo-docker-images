@@ -1,0 +1,25 @@
+FROM ocamlpro/ocaml:4.14 as ae-compilation
+
+LABEL maintainer="elias.bendjaballah@gmail.com"
+LABEL description="Light docker images for the SMT solver alt-ergo (no handling of the GUI is proposed for `slim` images) "
+
+RUN opam switch create . ocaml-system --deps --locked && \
+    eval `opam env` && \
+    opam install -y alt-ergo.2.3.1 && \
+    sudo cp /home/ocaml/_opam/bin/alt-ergo /usr/local/bin/alt-ergo-2.3.1 && \
+    rm -rf _opam && \
+    rm -rf .opam
+
+WORKDIR /home/ocaml
+RUN rm -rf /home/ocaml/alt-ergo
+
+FROM alpine:3.16 as target
+
+RUN apk add gmp-dev
+
+RUN addgroup -S iamproof && adduser -S iamproof -G iamproof -s /bin/sh
+RUN echo 'iamproof ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+USER iamproof
+WORKDIR /home/ocaml
+
+COPY --from=ae-compilation /usr/local/bin/alt-ergo-2.3.1 /usr/local/bin/
