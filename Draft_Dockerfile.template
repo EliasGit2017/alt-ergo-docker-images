@@ -1,0 +1,47 @@
+FROM ocamlpro/ocaml:@OCaml_Compiler_Version@ as ae-compilation
+
+LABEL maintainer="elias.bendjaballah@gmail.com"
+LABEL description="Light docker images for the SMT solver alt-ergo (no handling of the GUI \
+                is proposed for `slim` images) "
+
+# Get alt-ergo with git
+
+# RUN git clone https://github.com/OCamlPro/alt-ergo.git
+
+# Or get alt-ergo different versions using wget :
+
+# RUN wget https://github.com/OCamlPro/alt-ergo/archive/refs/tags/@AE_TAG_VERSION@.zip && \
+#     unzip @AE_TAG_VERSION@.zip && \
+#     rm @AE_TAG_VERSION@.zip
+
+# Or just get it using opam (main solution)
+
+WORKDIR /home/ocaml/alt-ergo-@AE_TAG_VERSION@
+RUN opam switch create /home/ocaml/alt-ergo-@AE_TAG_VERSION@ ocaml-system --deps --locked && \
+    eval `opam env` && \
+    ./configure && \
+    make && \
+    make install-all
+RUN sudo cp /home/ocaml/alt-ergo/_opam/bin/alt-ergo /usr/local/bin/alt-ergo-2.4.1
+#   && sudo cp /home/ocaml/alt-ergo/_opam/bin/altgr-ergo /usr/local/bin/altgr-ergo-2.4.1
+
+
+WORKDIR /home/ocaml
+RUN rm -rf /home/ocaml/alt-ergo
+
+FROM alpine:@Alpine_Output_Version@ as target
+
+RUN apk add gcc libc-dev make sudo patch rsync m4
+
+RUN apk add perl gdbm fribidi pcre zlib linux-headers util-macros \
+    icu util-linux alpine-baselayout ca-certificates m4 p11-kit busybox pax-utils file libgcrypt \
+    libunistring binutils expat xz gettext
+
+RUN addgroup -S ocaml && adduser -S ocaml -G ocaml -s /bin/sh
+RUN echo 'ocaml ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+USER ocaml
+WORKDIR /home/ocaml
+
+#COPY --from=ae-compilation /home/ocaml/alt-ergo /home/ocaml/alt-ergo # useless take only binarie(s)
+COPY --from=ae-compilation /usr/local/bin/alt-ergo-2.4.1 /usr/local/bin/
+# add test files here  --> (or connect volume to ae-benchmark)

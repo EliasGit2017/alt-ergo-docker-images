@@ -1,0 +1,5 @@
+alias os="opam switch"
+alias oev="eval \$(opam env)"
+alias ol="opam list"
+alias la="ls -a"
+alias ll="ls -l"

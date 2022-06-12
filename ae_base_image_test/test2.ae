@@ -1,0 +1,15 @@
+type 'a set
+
+logic add : 'a , 'a set -> 'a set
+logic mem : 'a , 'a set -> prop
+
+axiom mem_add:
+  forall x, y : 'a. forall s : 'a set.
+     mem(x, add(y, s)) <-> (x = y or mem(x, s))
+
+logic is1, is2 : int set
+logic iss : int set set
+
+goal g:
+  is1 = is2 ->
+    mem (is1, add (is2, iss))
