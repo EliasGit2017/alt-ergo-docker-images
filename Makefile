@@ -11,9 +11,9 @@ help:
 # @Alpine_Output_Version@
 # @Target_Pkgs@ --> autoconf gmp-dev pkgconf zlib-dev
 
-#  docker build --pull --rm -f "ae_base_image_test/Dockerfile" -t ae_slim_ncg:latest "ae_base_image_test" <
 
-# https://github.com/OCamlPro/alt-ergo/archive/refs/tags/2.3.3-free.zip
+############################################################################################################
+
 
 alt-ergo.0.95.2-slim: Dockerfile-aes-0-95-2
 	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 0.95.2\n"
@@ -63,6 +63,90 @@ Dockerfile-aes-1-30: Makefile Dockerfile.template
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
 cat > $@
 
+alt-ergo.2.0.0-slim: Dockerfile-aes-2-0-0
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.0.0\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.0.0-slim\n
+
+Dockerfile-aes-2-0-0: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.0.0|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.1.0-slim: Dockerfile-aes-2-1-0
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.1.0\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.1.0-slim\n
+
+Dockerfile-aes-2-1-0: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.1.0|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.2.0-slim: Dockerfile-aes-2-2-0
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.2.0\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.2.0-slim\n
+
+Dockerfile-aes-2-2-0: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.2.0|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.3.0-slim: Dockerfile-aes-2-3-0
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.3.0\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.3.0-slim\n
+
+Dockerfile-aes-2-3-0: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.3.0|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.3.1-slim: Dockerfile-aes-2-3-1
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.3.1\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.3.1-slim\n
+
+Dockerfile-aes-2-3-1: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.3.1|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.3.2-slim: Dockerfile-aes-2-3-2
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.3.2\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.3.2-slim\n
+
+Dockerfile-aes-2-3-2: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.3.2|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
+alt-ergo.2.3.3-slim: Dockerfile-aes-2-3-3
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.3.3\n"
+	docker build . -t ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.3.3-slim\n
+
+Dockerfile-aes-2-3-3: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.3.3|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+cat > $@
+
 alt-ergo.2.4.0-slim: Dockerfile-aes-2-4-0
 	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.4.0\n"
 	docker build . -t ae_mono:$@ --target target -f $^
@@ -90,8 +174,6 @@ cat > $@
 
 clean :
 	rm -f Dockerfile-ae*
-
-
-
+	
 
 
