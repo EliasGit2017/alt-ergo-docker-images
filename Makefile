@@ -173,7 +173,7 @@ Dockerfile-aes-2-4-1: Makefile Dockerfile.template
 cat > $@
 
 push-last: alt-ergo.2.4.1-slim
-	echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+	echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
 TARGETS += push-last
 
