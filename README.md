@@ -1,5 +1,3 @@
-![example workflow](https://github.com/EliasGit2017/alt-ergo-docker-images/actions/workflows/makefile.yml/badge.svg)
+# alt-ergo docker images :  ![example workflow](https://github.com/EliasGit2017/alt-ergo-docker-images/actions/workflows/makefile.yml/badge.svg)
 
-
-* Run Benchmark on :
-    * `/2018-10-31/SMT2-format/AUFLIA/20170829-Rodin/*`
+Building alt-ergo images
