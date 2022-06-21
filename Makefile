@@ -209,7 +209,7 @@ push-last: alt-ergo.2.4.1-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
 TARGETS += push-last
 
-push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.1.30-slim alt-ergo.2.0.0-slim alt-ergo.2.1.0-slim alt-ergo.2.2.0-slim alt-ergo.2.3.0-slim alt-ergo.2.3.1-slim alt-ergo.2.3.2-slim alt-ergo.2.3.3-slim alt-ergo.2.4.0-slim alt-ergo.2.4.1-slim
+push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.1.30-slim alt-ergo.2.0.0-slim alt-ergo.2.1.0-slim alt-ergo.2.2.0-slim alt-ergo.2.3.0-slim alt-ergo.2.3.1-slim alt-ergo.2.3.2-slim alt-ergo.2.3.3-slim alt-ergo.2.4.0-slim alt-ergo.2.4.1-slim alt-ergo.2.4.1-gui
 	echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
 	docker push elias2049/ae_mono:alt-ergo.0.95.2-slim
 	docker push elias2049/ae_mono:alt-ergo.0.99.1-slim
