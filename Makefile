@@ -31,6 +31,7 @@ Dockerfile-aes-0-95-2: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|0.95.2|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.0.99.1-slim: Dockerfile-aes-0-99-1
@@ -43,6 +44,7 @@ Dockerfile-aes-0-99-1: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|0.99.1|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.1.01-slim: Dockerfile-aes-1-01
@@ -55,6 +57,7 @@ Dockerfile-aes-1-01: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|1.01|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.1.30-slim: Dockerfile-aes-1-30
@@ -67,6 +70,7 @@ Dockerfile-aes-1-30: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|1.30|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.0.0-slim: Dockerfile-aes-2-0-0
@@ -79,6 +83,7 @@ Dockerfile-aes-2-0-0: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.0.0|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.1.0-slim: Dockerfile-aes-2-1-0
@@ -91,6 +96,7 @@ Dockerfile-aes-2-1-0: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.1.0|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.2.0-slim: Dockerfile-aes-2-2-0
@@ -103,6 +109,7 @@ Dockerfile-aes-2-2-0: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.2.0|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.3.0-slim: Dockerfile-aes-2-3-0
@@ -115,6 +122,7 @@ Dockerfile-aes-2-3-0: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.3.0|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.3.1-slim: Dockerfile-aes-2-3-1
@@ -127,6 +135,7 @@ Dockerfile-aes-2-3-1: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.3.1|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.3.2-slim: Dockerfile-aes-2-3-2
@@ -139,6 +148,7 @@ Dockerfile-aes-2-3-2: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.3.2|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.3.3-slim: Dockerfile-aes-2-3-3
@@ -151,6 +161,7 @@ Dockerfile-aes-2-3-3: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.3.3|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.4.0-slim: Dockerfile-aes-2-4-0
@@ -163,6 +174,7 @@ Dockerfile-aes-2-4-0: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.4.0|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 
@@ -176,6 +188,7 @@ Dockerfile-aes-2-4-1: Makefile Dockerfile.template
 	sed 's|@AE_TAG_VERSION@|2.4.1|g' | \
 	sed 's|@Alpine_Output_Version@|3.16|g' | \
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
 alt-ergo.2.4.1-gui: Dockerfile-aeg-2-4-1
