@@ -11,6 +11,12 @@ help:
 # @Alpine_Output_Version@
 # @Target_Pkgs@ --> autoconf gmp-dev pkgconf zlib-dev
 
+# Variables related to the gui template
+# @Debian_Opam_Base@
+# @Debian_Opam_Pkgs@
+# @Ocaml_Compiler_Version@
+# @Debian_Target@
+# @Debian_Target_Pkgs@
 
 ############################################################################################################
 
@@ -172,6 +178,19 @@ Dockerfile-aes-2-4-1: Makefile Dockerfile.template
 	sed 's|@Target_Pkgs@|gmp-dev|g' | \
 cat > $@
 
+alt-ergo.2.4.1-gui: Dockerfile-aeg-2-4-1
+	@echo "\n\nGenerating image for alt-ergo (with GUI support) version : 2.4.1\n"
+	docker build . -t elias2049/ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.4.1-gui\n
+
+Dockerfile-aeg-2-4-1: Makefile Dockerfile.gui_template
+	sed 's|@Debian_Opam_Base@|debian-10-ocaml-4.14|g' Dockerfile.gui_template | \
+	sed 's|@Debian_Opam_Pkgs@|autoconf libgmp-dev libgtk+2.0-dev libgtk2.0-dev pkgconf zlib1g-dev libgtksourceview2.0-dev|g' | \
+	sed 's|@Ocaml_Compiler_Version@|4.14|g' | \
+	sed 's|@Debian_Target@|buster-slim|g' | \
+	sed 's|@Debian_Target_Pkgs@|autoconf libgmp-dev libgtk+2.0-dev libgtk2.0-dev pkgconf zlib1g-dev libgtksourceview2.0-dev|g' | \
+cat > $@
+
 push-last: alt-ergo.2.4.1-slim
 	echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
@@ -192,6 +211,7 @@ push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.
 	docker push elias2049/ae_mono:alt-ergo.2.3.3-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.0-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
+	docker push elias2049/ae_mono:alt-ergo.2.4.1-gui
 TARGETS += push-all
 
 clean :
