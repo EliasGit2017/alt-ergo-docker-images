@@ -5,7 +5,7 @@ LABEL description="Light docker images for the SMT solver alt-ergo (no handling 
 
 RUN opam switch create . ocaml-system --deps --locked && \
     eval `opam env` && \
-    opam install -y alt-ergo.@AE_TAG_VERSION@ && \
+    opam install -y @Opam_deps@ alt-ergo.@AE_TAG_VERSION@ && \
     sudo cp /home/ocaml/_opam/bin/alt-ergo /usr/local/bin/alt-ergo-@AE_TAG_VERSION@ && \
     rm -rf _opam && \
     rm -rf .opam
