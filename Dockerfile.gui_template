@@ -1,0 +1,39 @@
+###################################################################################################
+# First stage : build altgr-ergo
+# FROM ocaml/opam:debian-10-ocaml-4.14 as ae-builder
+FROM ocaml/opam:@Debian_Opam_Base@ as ae-builder
+
+# RUN sudo apt-get update && \
+#     sudo apt-get upgrade -yq --with-new-pkgs --auto-remove && \
+#     sudo apt-get install -y autoconf libgmp-dev libgtk+2.0-dev libgtk2.0-dev pkgconf zlib1g-dev libgtksourceview2.0-dev && \
+#     sudo apt-get clean
+
+RUN sudo apt-get update && \
+    sudo apt-get upgrade -yq --with-new-pkgs --auto-remove && \
+    sudo apt-get install -y @Debian_Opam_Pkgs@ && \
+    sudo apt-get clean
+
+# RUN opam install altgr-ergo && \
+#     eval `opam env` && \
+#     sudo cp /home/opam/.opam/4.14/bin/altgr-ergo /usr/local/bin
+
+RUN opam install altgr-ergo && \
+    eval `opam env` && \
+    sudo cp /home/opam/.opam/@Ocaml_Compiler_Version@/bin/altgr-ergo /usr/local/bin
+
+# Target stage : user is kept to root
+# FROM debian:buster-slim as target
+FROM debian:@Debian_Target@ as target
+
+COPY --from=ae-builder /usr/local/bin/altgr-ergo /usr/local/bin
+
+RUN mkdir /root/.config
+WORKDIR /home
+COPY ./altgr-ergo.conf /root/.config
+
+RUN apt-get update -yq && \
+    apt-get upgrade -yq --with-new-pkgs --auto-remove && \
+    apt-get install -yq --no-install-recommends @Debian_Target_Pkgs@ && \
+    apt-get clean
+
+
