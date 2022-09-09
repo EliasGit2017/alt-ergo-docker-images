@@ -20,6 +20,9 @@ help:
 
 ############################################################################################################
 
+cvc4-1.0-base: Dockerfile-cvc4-1-0
+	@echo "\n\nGenerating image for cvc4 version : 4.1.0\n"
+	docker build ./cvc/cvc4-images/ -t 
 
 alt-ergo.0.95.2-slim: Dockerfile-aes-0-95-2
 	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 0.95.2\n"

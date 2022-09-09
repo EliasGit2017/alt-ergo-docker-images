@@ -1,0 +1,2 @@
+- Make this a template for all versions of cvc4 available + integrate to makefile
+- consider ocamldockerfile for the whole repo
