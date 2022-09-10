@@ -18,8 +18,117 @@ help:
 # @Debian_Target@
 # @Debian_Target_Pkgs@
 
+# !! Login docker in terminal before calling push-*
+
 ############################################################################################################
 
+cvc4-1.0-base: Dockerfile-cvc4-1-0
+	@echo "\n\nGenerating image for cvc4 version : 4.1.0\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-0\n
+
+Dockerfile-cvc4-1-0: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.0-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.0-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.0|g' | \
+cat > $@
+
+cvc4-1.1-base: Dockerfile-cvc4-1-1
+	@echo "\n\nGenerating image for cvc4 version : 4.1.1\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-1\n
+
+Dockerfile-cvc4-1-1: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.1-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.1-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.1|g' | \
+cat > $@
+
+cvc4-1.2-base: Dockerfile-cvc4-1-2
+	@echo "\n\nGenerating image for cvc4 version : 4.1.2\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-2\n
+
+Dockerfile-cvc4-1-2: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.2-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.2-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.2|g' | \
+cat > $@
+
+cvc4-1.3-base: Dockerfile-cvc4-1-3
+	@echo "\n\nGenerating image for cvc4 version : 4.1.3\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-3\n
+
+Dockerfile-cvc4-1-3: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.3-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.3-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.3|g' | \
+cat > $@
+
+cvc4-1.4-base: Dockerfile-cvc4-1-4
+	@echo "\n\nGenerating image for cvc4 version : 4.1.4\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-4\n
+
+Dockerfile-cvc4-1-4: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.4-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.4-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.4|g' | \
+cat > $@
+
+cvc4-1.5-base: Dockerfile-cvc4-1-5
+	@echo "\n\nGenerating image for cvc4 version : 4.1.5\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-5\n
+
+Dockerfile-cvc4-1-5: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.5-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.5-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.5|g' | \
+cat > $@
+
+cvc4-1.6-base: Dockerfile-cvc4-1-6
+	@echo "\n\nGenerating image for cvc4 version : 4.1.6\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-6\n
+
+Dockerfile-cvc4-1-6: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.6-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.6-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.6|g' | \
+cat > $@
+
+cvc4-1.7-base: Dockerfile-cvc4-1-7
+	@echo "\n\nGenerating image for cvc4 version : 4.1.7\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-7\n
+
+Dockerfile-cvc4-1-7: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|https://github.com/CVC4/CVC4/releases/download/1.7/cvc4-1.7-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.7-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.7|g' | \
+cat > $@
+
+cvc4-1.8-base: Dockerfile-cvc4-1-8
+	@echo "\n\nGenerating image for cvc4 version : 4.1.8\n"
+	docker build ./cvc/cvc4-images/ -t elias2049/cvc:$@ -f $^
+TARGETS +=\n cvc4-1-8\n
+
+Dockerfile-cvc4-1-8: Makefile ./cvc/cvc4-images/Dockerfile.template
+	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
+	sed 's|@cvc4_link@|https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_rawname@|cvc4-1.8-x86_64-linux-opt|g' | \
+	sed 's|@cvc4_version@|cvc4-1.8|g' | \
+cat > $@
 
 alt-ergo.0.95.2-slim: Dockerfile-aes-0-95-2
 	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 0.95.2\n"
@@ -191,6 +300,19 @@ Dockerfile-aes-2-4-1: Makefile Dockerfile.template
 	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
 cat > $@
 
+alt-ergo.2.4.2-slim: Dockerfile-aes-2-4-2
+	@echo "\n\nGenerating slim image for alt-ergo (no GUI) version : 2.4.2\n"
+	docker build . -t elias2049/ae_mono:$@ --target target -f $^
+TARGETS += alt-ergo.2.4.2-slim\n
+
+Dockerfile-aes-2-4-2: Makefile Dockerfile.template
+	sed 's|@OCaml_Compiler_Version@|4.14|g' Dockerfile.template | \
+	sed 's|@AE_TAG_VERSION@|2.4.2|g' | \
+	sed 's|@Alpine_Output_Version@|3.16|g' | \
+	sed 's|@Target_Pkgs@|gmp-dev|g' | \
+	sed 's|@Opam_deps@|ocamlfind.1.9.3|g' | \
+cat > $@
+
 alt-ergo.2.4.1-gui: Dockerfile-aeg-2-4-1
 	@echo "\n\nGenerating image for alt-ergo (with GUI support) version : 2.4.1\n"
 	docker build . -t elias2049/ae_mono:$@ --target target -f $^
@@ -204,12 +326,67 @@ Dockerfile-aeg-2-4-1: Makefile Dockerfile.gui_template
 	sed 's|@Debian_Target_Pkgs@|autoconf libgmp-dev libgtk+2.0-dev libgtk2.0-dev pkgconf zlib1g-dev libgtksourceview2.0-dev|g' | \
 cat > $@
 
-push-last: alt-ergo.2.4.1-slim
-	echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
-	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
+push-last: alt-ergo.2.4.2-slim
+	# echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin # Login from terminal
+	docker push elias2049/ae_mono:alt-ergo.2.4.2-slim
 TARGETS += push-last
 
-push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.1.30-slim alt-ergo.2.0.0-slim alt-ergo.2.1.0-slim alt-ergo.2.2.0-slim alt-ergo.2.3.0-slim alt-ergo.2.3.1-slim alt-ergo.2.3.2-slim alt-ergo.2.3.3-slim alt-ergo.2.4.0-slim alt-ergo.2.4.1-slim alt-ergo.2.4.1-gui
+push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.1.30-slim alt-ergo.2.0.0-slim alt-ergo.2.1.0-slim alt-ergo.2.2.0-slim alt-ergo.2.3.0-slim alt-ergo.2.3.1-slim alt-ergo.2.3.2-slim alt-ergo.2.3.3-slim alt-ergo.2.4.0-slim alt-ergo.2.4.1-slim alt-ergo.2.4.1-gui alt-ergo.2.4.2-slim cvc4-1.0-base cvc4-1.1-base cvc4-1.2-base cvc4-1.3-base cvc4-1.4-base cvc4-1.5-base cvc4-1.6-base cvc4-1.7-base cvc4-1.8-base
+	echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
+	docker push elias2049/ae_mono:alt-ergo.0.95.2-slim
+	docker push elias2049/ae_mono:alt-ergo.0.99.1-slim
+	docker push elias2049/ae_mono:alt-ergo.1.01-slim
+	docker push elias2049/ae_mono:alt-ergo.1.30-slim
+	docker push elias2049/ae_mono:alt-ergo.2.0.0-slim
+	docker push elias2049/ae_mono:alt-ergo.2.1.0-slim
+	docker push elias2049/ae_mono:alt-ergo.2.2.0-slim
+	docker push elias2049/ae_mono:alt-ergo.2.3.0-slim
+	docker push elias2049/ae_mono:alt-ergo.2.3.1-slim
+	docker push elias2049/ae_mono:alt-ergo.2.3.2-slim
+	docker push elias2049/ae_mono:alt-ergo.2.3.3-slim
+	docker push elias2049/ae_mono:alt-ergo.2.4.0-slim
+	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
+	docker push elias2049/ae_mono:alt-ergo.2.4.2-slim
+	docker push elias2049/ae_mono:alt-ergo.2.4.1-gui
+	docker push elias2049/cvc:cvc4-1.0-base
+	docker push elias2049/cvc:cvc4-1.1-base
+	docker push elias2049/cvc:cvc4-1.2-base
+	docker push elias2049/cvc:cvc4-1.3-base
+	docker push elias2049/cvc:cvc4-1.4-base
+	docker push elias2049/cvc:cvc4-1.5-base
+	docker push elias2049/cvc:cvc4-1.6-base
+	docker push elias2049/cvc:cvc4-1.7-base
+	docker push elias2049/cvc:cvc4-1.8-base
+TARGETS += push-all
+
+push-cvc: cvc4-1.0-base cvc4-1.1-base cvc4-1.2-base cvc4-1.3-base cvc4-1.4-base cvc4-1.5-base cvc4-1.6-base cvc4-1.7-base cvc4-1.8-base
+	# echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
+	docker push elias2049/cvc:cvc4-1.0-base
+	docker push elias2049/cvc:cvc4-1.1-base
+	docker push elias2049/cvc:cvc4-1.2-base
+	docker push elias2049/cvc:cvc4-1.3-base
+	docker push elias2049/cvc:cvc4-1.4-base
+	docker push elias2049/cvc:cvc4-1.5-base
+	docker push elias2049/cvc:cvc4-1.6-base
+	docker push elias2049/cvc:cvc4-1.7-base
+	docker push elias2049/cvc:cvc4-1.8-base
+TARGETS += push-cvc
+
+push-cvc-simple:
+	# echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
+	docker push elias2049/cvc:cvc4-1.0-base
+	docker push elias2049/cvc:cvc4-1.1-base
+	docker push elias2049/cvc:cvc4-1.2-base
+	docker push elias2049/cvc:cvc4-1.3-base
+	docker push elias2049/cvc:cvc4-1.4-base
+	docker push elias2049/cvc:cvc4-1.5-base
+	docker push elias2049/cvc:cvc4-1.6-base
+	docker push elias2049/cvc:cvc4-1.7-base
+	docker push elias2049/cvc:cvc4-1.8-base
+TARGETS += push-cvc-simple
+
+
+push-simple-all:
 	echo $$DOCKERHUB_PASSWORD | docker login -u $$DOCKERHUB_USERNAME --password-stdin
 	docker push elias2049/ae_mono:alt-ergo.0.95.2-slim
 	docker push elias2049/ae_mono:alt-ergo.0.99.1-slim
@@ -225,7 +402,9 @@ push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.
 	docker push elias2049/ae_mono:alt-ergo.2.4.0-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-gui
-TARGETS += push-all
+	docker push elias2049/ae_mono:alt-ergo.2.4.2-slim
+TARGETS += push-simple-all
+
 
 clean :
 	rm -f Dockerfile-ae*

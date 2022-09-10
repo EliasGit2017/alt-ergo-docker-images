@@ -1,0 +1,11 @@
+FROM alpine:@Alpine_version@
+
+LABEL maintainer="elias.bendjaballah@gmail.com"
+LABEL description="Light docker images for the SMT solver cvc4 "
+
+WORKDIR /home/proofs
+
+RUN wget @cvc4_link@ && \
+    mv @cvc4_rawname@ @cvc4_version@ && \
+    chmod a+x @cvc4_version@ && \
+    mv @cvc4_version@ /usr/local/bin
