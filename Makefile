@@ -31,7 +31,7 @@ Dockerfile-cvc4-1-0: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.0-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.0-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.0|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.0|g' | \
 cat > $@
 
 cvc4-1.1-base: Dockerfile-cvc4-1-1
@@ -43,7 +43,7 @@ Dockerfile-cvc4-1-1: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.1-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.1-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.1|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.1|g' | \
 cat > $@
 
 cvc4-1.2-base: Dockerfile-cvc4-1-2
@@ -55,7 +55,7 @@ Dockerfile-cvc4-1-2: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.2-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.2-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.2|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.2|g' | \
 cat > $@
 
 cvc4-1.3-base: Dockerfile-cvc4-1-3
@@ -67,7 +67,7 @@ Dockerfile-cvc4-1-3: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.3-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.3-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.3|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.3|g' | \
 cat > $@
 
 cvc4-1.4-base: Dockerfile-cvc4-1-4
@@ -79,7 +79,7 @@ Dockerfile-cvc4-1-4: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.4-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.4-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.4|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.4|g' | \
 cat > $@
 
 cvc4-1.5-base: Dockerfile-cvc4-1-5
@@ -91,7 +91,7 @@ Dockerfile-cvc4-1-5: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.5-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.5-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.5|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.5|g' | \
 cat > $@
 
 cvc4-1.6-base: Dockerfile-cvc4-1-6
@@ -103,7 +103,7 @@ Dockerfile-cvc4-1-6: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|http://cvc4.cs.stanford.edu/downloads/builds/x86_64-linux-opt/cvc4-1.6-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.6-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.6|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.6|g' | \
 cat > $@
 
 cvc4-1.7-base: Dockerfile-cvc4-1-7
@@ -115,7 +115,7 @@ Dockerfile-cvc4-1-7: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|https://github.com/CVC4/CVC4/releases/download/1.7/cvc4-1.7-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.7-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.7|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.7|g' | \
 cat > $@
 
 cvc4-1.8-base: Dockerfile-cvc4-1-8
@@ -127,7 +127,7 @@ Dockerfile-cvc4-1-8: Makefile ./cvc/cvc4-images/Dockerfile.template
 	sed 's|@Alpine_version@|3.16|g' ./cvc/cvc4-images/Dockerfile.template | \
 	sed 's|@cvc4_link@|https://github.com/CVC4/CVC4/releases/download/1.8/cvc4-1.8-x86_64-linux-opt|g' | \
 	sed 's|@cvc4_rawname@|cvc4-1.8-x86_64-linux-opt|g' | \
-	sed 's|@cvc4_version@|cvc4-1.8|g' | \
+	sed 's|@cvc4_version@|cvc-4-1.8|g' | \
 cat > $@
 
 alt-ergo.0.95.2-slim: Dockerfile-aes-0-95-2
@@ -410,6 +410,7 @@ TARGETS += push-simple-all
 
 clean :
 	rm -f Dockerfile-ae*
+	rm -f Dockerfile-cv*
 	
 
 

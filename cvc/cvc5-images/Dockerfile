@@ -7,5 +7,5 @@ WORKDIR /home/proofs
 
 RUN wget https://github.com/cvc5/cvc5/releases/latest/download/cvc5-Linux && \
     chmod a+x cvc5-Linux && \
-    mv cvc5-Linux /usr/local/bin
+    mv cvc5-Linux /usr/local/bin/cvc-5
 
