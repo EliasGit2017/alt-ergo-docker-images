@@ -347,7 +347,7 @@ push-all: alt-ergo.0.95.2-slim alt-ergo.0.99.1-slim alt-ergo.1.01-slim alt-ergo.
 	docker push elias2049/ae_mono:alt-ergo.2.4.0-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.1-slim
 	docker push elias2049/ae_mono:alt-ergo.2.4.2-slim
-	docker push elias2049/ae_mono:alt-ergo.2.4.1-gui
+	# docker push elias2049/ae_mono:alt-ergo.2.4.1-gui # breaks CI due to libgtk3 ... this image is useless anyway
 	docker push elias2049/cvc:cvc4-1.0-base
 	docker push elias2049/cvc:cvc4-1.1-base
 	docker push elias2049/cvc:cvc4-1.2-base
@@ -383,6 +383,8 @@ push-cvc-simple:
 	docker push elias2049/cvc:cvc4-1.6-base
 	docker push elias2049/cvc:cvc4-1.7-base
 	docker push elias2049/cvc:cvc4-1.8-base
+	#standalone cvc5
+	docker push elias2049/cvc5-base
 TARGETS += push-cvc-simple
 
 
