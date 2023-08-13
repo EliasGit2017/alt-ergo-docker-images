@@ -1,0 +1,4 @@
+(executable
+ (public_name alt_ergo_docker_images)
+ (name main)
+ (libraries alt_ergo_docker_images dockerfile dockerfile-cmd dockerfile-opam))

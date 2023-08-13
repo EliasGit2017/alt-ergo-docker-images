@@ -1,0 +1,27 @@
+(lang dune 3.10)
+
+(name alt_ergo_docker_images)
+
+(generate_opam_files true)
+
+(source
+ (github EliasGit2017/alt-ergo-docker-images))
+
+(authors "NonaYoBuzniss")
+
+(maintainers "La flemme du lundi matin")
+
+(license LICENSE)
+
+(documentation https://url/to/documentation)
+
+(package
+ (name alt_ergo_docker_images)
+ (synopsis
+  "generate dockerfiles using `dockerfile` `dockerfile-opam` `dockerfile-cmd` packages")
+ (description "synopsis explained enough")
+ (depends ocaml dune dockerfile dockerfile-cmd dockerfile-opam)
+ (tags
+  (topics "Dockerfile" "Alt-Ergo" your project)))
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
