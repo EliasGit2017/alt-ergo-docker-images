@@ -1,2 +1,3 @@
 (test
- (name alt_ergo_docker_images))
+ (name alt_ergo_docker_images)
+ (libraries alt_ergo_docker_images dockerfile dockerfile-cmd dockerfile-opam alcotest))

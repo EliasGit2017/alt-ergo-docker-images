@@ -1,0 +1,4 @@
+profile=default
+
+margin = 86
+parse-docstrings = true

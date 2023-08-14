@@ -20,7 +20,7 @@
  (synopsis
   "generate dockerfiles using `dockerfile` `dockerfile-opam` `dockerfile-cmd` packages")
  (description "synopsis explained enough")
- (depends ocaml dune dockerfile dockerfile-cmd dockerfile-opam)
+ (depends ocaml dune dockerfile dockerfile-cmd dockerfile-opam alcotest)
  (tags
   (topics "Dockerfile" "Alt-Ergo" your project)))
 
